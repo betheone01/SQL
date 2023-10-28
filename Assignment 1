@@ -1,0 +1,24 @@
+1)  Create a database named college
+=> CREATE DATABASE college;
+
+2) Create a table name student in college database with following structure roll,name,class,marks,age with respective datatypes.
+=> CREATE TABLENAME student (RollNo int ,Name varchar(255),marks int, Class varchar(255),age int ); 
+
+3) Check the structure of the table.
+=> DESC student ;
+
+4) Alter the datatype of marks from float to integer
+=> ALTER TABLE STUDENT MODIFY marks int;
+
+5) Alter the table to remove the column age
+=>ALTER TABLE student DROP age;
+
+6) Show all the tables in database college.
+=> SHOW tables ;
+
+7) Truncate the table student
+=> TRUNCATE student;
+
+8) Drop the table and database also.
+=>DROP student ;
+=>DROP DATABASE college ;
