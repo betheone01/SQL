@@ -1,0 +1,43 @@
+Create a database named college
+=>CREATE DATABASE college;
+
+Create a table, name student in college database with following structure ,roll,name,class,marks,age with respective datatypes.
+=>CREATE TABLE college.student (
+    roll INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    class VARCHAR(255) NOT NULL,
+    marks INT NOT NULL,
+    age INT NOT NULL,
+    PRIMARY KEY (roll)
+);
+
+Insert at least 5 rows in the table.
+INSERT INTO college.student (name, class, marks, age) VALUES
+    ('Alice', '10th', 90, 15),
+    ('Bob', '11th', 85, 16),
+    ('Carol', '12th', 95, 17),
+    ('Dave', '10th', 80, 15),
+    ('Eve', '11th', 75, 16);
+
+Delete the entry of roll number 4
+=> 
+DELETE FROM student,
+WHERE roll=4;
+
+Update the marks of roll number 3
+=>
+UPDATE STUDENT  SET marks=65 where roll=3;
+
+Give additional grace marks of 0.5 to all students.
+UPDATE STUDENT SET marks=marks+0.5;
+
+Truncate the table
+TRUNCATE TABLE student;
+
+Insert the data again using multi-insert statement.
+INSERT INTO college.student (name, class, marks, age) VALUES
+    ('Alice', '10th', 90, 15),
+    ('Bob', '11th', 85, 16),
+    ('Carol', '12th', 95, 17),
+    ('Dave', '10th', 80, 15),
+    ('Eve', '11th', 75, 16);
