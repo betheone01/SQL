@@ -1,0 +1,62 @@
+1) Create a database named college
+  => CREATE DATABASE college;
+
+2) Create a table name student in college database with following structure roll,name,class,marks,age with respective datatypes.
+  
+ => CREATE TABLE college.student
+    (
+      roll INT NOT NULL AUTO_INCREMENT,
+      name VARCHAR(255) NOT NULL,
+      class INT NOT NULL,
+      marks INT NOT NULL,
+      age INT NOT NULL,
+      PRIMARY KEY (roll)
+    );
+
+3) Apply the following MySQL clause to this table.
+  Creating =>
+  ALTER TABLE college.student
+  ADD CONSTRAINT chk_marks CHECK (marks >= 0 AND marks <= 100);
+  
+  Altering=>
+  ALTER TABLE college.student
+  MODIFY CONSTRAINT chk_marks CHECK (marks >= 0 AND marks <= 120);
+  
+  Dropping Constraints=>
+  ALTER TABLE college.student
+  DROP CONSTRAINT chk_marks;
+
+4) Aggregate Functions: SUM(), AVG(), COUNT(), MAX(), MIN(), COUNT(), Group By, Having
+   Clause =>
+    -- Get the sum of marks of all students.
+    SELECT SUM(marks) AS total_marks FROM college.student;
+    
+    -- Get the average marks of all students.
+    SELECT AVG(marks) AS average_marks FROM college.student;
+    
+    -- Get the number of students in each class.
+    SELECT class, COUNT(*) AS num_students FROM college.student GROUP BY class;
+    
+    -- Get the highest and lowest marks of all students.
+    SELECT MAX(marks) AS highest_marks, MIN(marks) AS lowest_marks FROM college.student;
+
+5) Using Like, Distinct, Order By, Between...And
+  
+    =>
+    -- Find all students whose name starts with the letter 'A'.
+    SELECT * FROM college.student WHERE name LIKE 'A%';
+    
+    -- Find all students who have a unique name.
+    SELECT DISTINCT name FROM college.student;
+    
+    -- Find all students who are in class 10 and have marks between 80 and 90.
+    SELECT * FROM college.student WHERE class = 10 AND marks BETWEEN 80 AND 90 ORDER BY marks DESC;
+
+
+6) Comparing Nulls, Using IN/Not-In
+   =>
+    -- Find all students who have a null value in the age column.
+    SELECT * FROM college.student WHERE age IS NULL;
+  
+   -- Find all students who have a non-null value in the age column.
+   SELECT * FROM college.student WHERE age IS NOT NULL;
