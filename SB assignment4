@@ -1,0 +1,149 @@
+Note : To solve below queries use “spj” database.
+mysql> select * from s;
++----+-------+--------+--------+
+| S  | Sname | status | city   |
++----+-------+--------+--------+
+| s1 | Smith |     20 | London |
+| s2 | Jones |     10 | Paris  |
+| s3 | Blake |     30 | Paris  |
+| s4 | Clark |     20 | London |
+| s5 | Adams |     30 | Athens |
+| S1 | Smith |     20 | London |
+| S2 | Jones |     10 | Paris  |
+| S3 | Blake |     30 | Paris  |
+| S4 | Clark |     20 | London |
+| S5 | Adams |     30 | Athens |
++----+-------+--------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select * from p;
++----+-------+-------+--------+--------+
+| P  | Pname | color | weight | city   |
++----+-------+-------+--------+--------+
+| P1 | Nut   | Red   |     12 | London |
+| P2 | Bolt  | Green |     17 | Paris  |
+| P3 | Screw | Blue  |     17 | Rome   |
+| P4 | Screw | Red   |     14 | London |
+| P5 | Cam   | Blue  |     12 | Paris  |
+| P6 | Cog   | Red   |     19 | London |
++----+-------+-------+--------+--------+
+6 rows in set (0.00 sec)
+
+mysql> select * from j;
++------+----------+--------+
+| J#   | Jname    | City   |
++------+----------+--------+
+| J1   | Sorter   | Paris  |
+| J2   | Punch    | Rome   |
+| J3   | Reader   | Athens |
+| J4   | Console  | Athens |
+| J5   | Collator | London |
+| J6   | Terminal | Oslo   |
+| J7   | Tape     | London |
++------+----------+--------+
+Question are :-
+
+1. Display the PNAME and COLOR from the P table for the CITY=”London”.
+select pname ,color from p where city='London';
+-----------------
+| Pname | color |
+-----------------
+| Nut   | Red   |
+| Screw | Red   |
+| Cog   | Red   |
+
+2. Display all the Suppliers from London.
+--------------------------------
+| S# | Sname | status | city   |
+--------------------------------
+| S1 | Smith |     20 | London |
+| S4 | Clark |     20 | London |
+--------------------------------
+3. Display all the Suppliers from Paris or Athens.
+--------------------------------
+| S# | Sname | status | city   |
+--------------------------------
+| S2 | jones |     10 | Paris  |
+| S3 | Blake |     30 | Paris  |
+| S5 | Adams |     30 | Athens |
+--------------------------------
+4. Display all the Jobs  in Athens.
+-------------------------
+| J# | Jname   | City   |
+-------------------------
+| J3 | Reader  | Athens |
+| J4 | Console | Athens |
+-------------------------
+
+5. Display all the Part names with the weight between 12 and 14 (inclusive of both).
+----------------------------------------
+| P# | Pname | color | weight | city   |
+----------------------------------------
+| P1 | Nut   | Red   |     12 | London |
+| P4 | Screw | Red   |     14 | London |
+| P5 | Cam   | Blue  |     12 | Paris  |
+----------------------------------------
+6. Display all the Suppliers with a Status greater than or equal to 20.
+--------------------------------
+| S# | Sname | status | city   |
+--------------------------------
+| S1 | Smith |     20 | London |
+| S3 | Blake |     30 | Paris  |
+| S4 | Clark |     20 | London |
+| S5 | Adams |     30 | Athens |
+--------------------------------
+7. Display all the Suppliers except the Suppliers from London.
+--------------------------------
+| S# | Sname | status | city   |
+--------------------------------
+| S2 | jones |     10 | Paris  |
+| S3 | Blake |     30 | Paris  |
+| S5 | Adams |     30 | Athens |
+--------------------------------
+8. Display only the Cities from where the Suppliers come from.
+----------
+| city   |
+----------
+| London |
+| Paris  |
+| Paris  |
+| London |
+| Athens |
+----------
+9. Display the Supplier table in the descending order of CITY.
+--------------------------------
+| S# | Sname | status | city   |
+--------------------------------
+| S5 | Adams |     30 | Athens |
+| S1 | Smith |     20 | London |
+| S4 | Clark |     20 | London |
+| S2 | jones |     10 | Paris  |
+| S3 | Blake |     30 | Paris  |
++----+-------+--------+--------+
+10. Display the Part Table in the ascending order of CITY and within the city in the ascending order of Part names.
+----------------------------------------
+| P# | Pname | color | weight | city   |
+----------------------------------------
+| P1 | Nut   | Red   |     12 | London |
+| P4 | Screw | Red   |     14 | London |
+| P6 | Cog   | Red   |     19 | London |
+| P2 | Bolt  | Green |     17 | Paris  |
+| P5 | Cam   | Blue  |     12 | Paris  |
+| P3 | Screw | Blue  |     17 | Rome   |
+----------------------------------------
+11. Display all the Suppliers with a status between 10 and 20.
+--------------------------------
+| S# | Sname | status | city   |
+--------------------------------
+| S1 | Smith |     20 | London |
+| S2 | jones |     10 | Paris  |
+| S4 | Clark |     20 | London |
+--------------------------------
+12. Display all the Parts and their Weight, which are not in the range of 10 and 1
+ ----------------------------------------
+| P# | Pname | color | weight | city   |
+----------------------------------------
+| P1 | Nut   | Red   |     12 | London |
+| P4 | Screw | Red   |     14 | London |
+| P5 | Cam   | Blue  |     12 | Paris  |
+----------------------------------------
