@@ -15,7 +15,7 @@
 
 3) Apply the following MySQL clause to this table.
   Creating =>
-  ALTER TABLE college.student
+  ALTER TABLE college.student.
   ADD CONSTRAINT chk_marks CHECK (marks >= 0 AND marks <= 100);
   
   Altering=>
