@@ -1,4 +1,4 @@
-1) Create a database named college
+1) Create a database named college.
   => CREATE DATABASE college;
 
 2) Create a table name student in college database with following structure roll,name,class,marks,age with respective datatypes.
